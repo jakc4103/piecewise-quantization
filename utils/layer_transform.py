@@ -156,7 +156,7 @@ def quantize_targ_layer(graph, bit_weight=8, targ_type=None, quant_type='uniform
 
                     result = torch.zeros_like(param)
                     result[torch.abs(param) < p] = (r1 * torch.sign(param))[torch.abs(param) < p]
-                    result[torch.abs(param) >= p] = (r2 * torch.sign(param))[torch.abs(param) > p]
+                    result[torch.abs(param) >= p] = (r2 * torch.sign(param))[torch.abs(param) >= p]
 
                     graph[layer_idx].weight.data.copy_(result)
 
