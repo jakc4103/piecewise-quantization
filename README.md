@@ -1,5 +1,5 @@
-# piecewise-quantization
-PyTorch implementation of Near-Lossless Post-Training Quantization of Deep Neural Networks via a Piecewise Linear Approximation
+# Piecewise-Quantization
+PyTorch implementation of [Near-Lossless Post-Training Quantization of Deep Neural Networks via a Piecewise Linear Approximation](https://arxiv.org/abs/2002.00104)
 
 
 ## Usage
@@ -15,10 +15,14 @@ run the 4-bits quantized pws mobilenetv2 model by:
 python main_cls.py --quantize --qtype pws --model mobilenetv2 --bits_Weight 4
 ```
 
+## Notes
+### Fake quantization
+  The quantization in this repo is fake quantization. Inference is **NOT** pure Int8 arithmetics.
 
 ## TODO
 - [x] Uniform quantization
 - [x] PWS quantization
+- [ ] update results for classification models
 - [ ] PWG quantization
 - [ ] PWL quantization
 - [ ] detection model
